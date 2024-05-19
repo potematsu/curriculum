@@ -1,0 +1,35 @@
+問１
+switch３
+
+問２
+
+ショートパスコスト
+Switch３→Switch１　100
+Switch１→Switch２　19
+Switch２→Switch4　100
+Switch4→Switch３　100
+
+ルートパスコスト
+Switch１　F0/1 219 F0/2 100
+Switch２　F0/1 119 F0/2 200
+Switch４　F0/1 219 F0/2 100
+
+
+ルートパスコストが小さいポートがルートポート
+ルートポートと対面するポートとルートブリッジのポートは指定ポート
+
+指定ポート　Switch３　E0/1 E0/2
+　　　　　　Switch１　F0/1
+
+余ったSwitch２F0/2とSwitch４E0/1のうち送信もとブリッジIDが小さい方が指定ポートになる
+ブリッジプライオリティを比較するとSwitch４がちいさい為、Switch４E0/1が指定ポート。
+残りのSwitch２F0/2がブロッキングポート。
+
+回答
+Switch１ F0/1 DP F0/2 RP
+Switch２ F0/1 RP F0/2 BP
+Switch3　E0/1 DP E0/2 DP
+Switch4　E0/1 DP E0/2 RP
+
+
+
